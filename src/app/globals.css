@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --breakpoint-xs: 360px;
+}
+
+:root {
+  --docs-bg-light: #d3d3d5;
+  --docs-bg-dark: #313036;
+  --docs-card-light: #f9f9f9;
+  --docs-card-dark: #1b1a1e;
+  --docs-accent: #c0441f;
+  --docs-copy-light: #3b1b0c;
+  --docs-muted-light: #424049;
+  --docs-muted-dark: #717079;
+  --docs-card-copy-dark: #8a8890;
+  --docs-border-light: #d3d3d5;
+  --docs-border-dark: #313036;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family:
+    "Satoshi",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.docs-shell {
+  background-color: var(--docs-bg-light);
+  background-image: url("/background-light.svg");
+  background-position: center;
+  background-size: cover;
+}
+
+.dark .docs-shell {
+  background-color: var(--docs-bg-dark);
+  background-image: url("/background-dark.svg");
+}
+
+.docs-copy {
+  color: var(--docs-copy-light);
+}
+
+.dark .docs-copy {
+  color: white;
+}
+
+.docs-card {
+  border: 1px solid var(--docs-border-light);
+  background-color: var(--docs-card-light);
+}
+
+.dark .docs-card {
+  border-color: var(--docs-border-dark);
+  background-color: var(--docs-card-dark);
+}
+
+.docs-muted {
+  color: var(--docs-muted-light);
+}
+
+.dark .docs-muted {
+  color: var(--docs-muted-dark);
+}
+
+.docs-card-copy {
+  color: var(--docs-muted-light);
+}
+
+.dark .docs-card-copy {
+  color: var(--docs-card-copy-dark);
+}
+
+.docs-accent {
+  background-color: var(--docs-accent);
+}
+
+.docs-toggle {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
