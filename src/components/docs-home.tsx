@@ -62,7 +62,7 @@ export function DocsHome() {
       <div className="docs-shell flex min-h-screen min-w-[375px] w-full flex-col">
         <header className="flex items-center justify-between px-4 pt-4 pb-3 md:px-6 lg:px-16">
           <img
-            src={darkMode ? embeddedAssets.logoDark : embeddedAssets.logoLight}
+            src={darkMode ? embeddedAssets.logoLight : embeddedAssets.logoDark}
             alt="Cerebras"
             className="h-auto w-20 lg:w-28"
           />
