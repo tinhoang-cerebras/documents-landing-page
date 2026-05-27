@@ -124,7 +124,7 @@ export function DocsHome() {
         </main>
 
         <footer className="flex items-center justify-between px-4 py-4 md:px-6 lg:px-16">
-          <div className="docs-muted text-[14px]">© 2024 Cerebras. All rights reserved</div>
+          <div className="docs-muted text-[14px]">© 2026 Cerebras. All rights reserved</div>
           <div className="flex items-center justify-between gap-5">
             {socialLinks.map((link) => (
               <a key={link.href} href={link.href}>
