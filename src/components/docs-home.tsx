@@ -1,7 +1,7 @@
 "use client";
 
 /* eslint-disable @next/next/no-img-element */
-import { useState, useSyncExternalStore } from "react";
+import { useSyncExternalStore } from "react";
 import { embeddedAssets } from "@/lib/embedded-assets";
 
 const colorSchemeQuery = "(prefers-color-scheme: dark)";
@@ -14,6 +14,40 @@ function subscribeToColorScheme(callback: () => void) {
 
 function getColorSchemeSnapshot() {
   return window.matchMedia(colorSchemeQuery).matches;
+}
+
+function ExternalLinkIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 16 16"
+      className="h-4 w-4"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.25 3.25H4.5C3.80964 3.25 3.25 3.80964 3.25 4.5V11.5C3.25 12.1904 3.80964 12.75 4.5 12.75H11.5C12.1904 12.75 12.75 12.1904 12.75 11.5V9.75"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8 8L12.5 3.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9.25 3.25H12.75V6.75"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
 }
 
 const cards = [
@@ -49,13 +83,11 @@ const socialLinks = [
 ] as const;
 
 export function DocsHome() {
-  const systemPrefersDark = useSyncExternalStore(
+  const darkMode = useSyncExternalStore(
     subscribeToColorScheme,
     getColorSchemeSnapshot,
     () => false,
   );
-  const [manualOverride, setManualOverride] = useState<boolean | null>(null);
-  const darkMode = manualOverride ?? systemPrefersDark;
 
   return (
     <div className={darkMode ? "dark" : undefined}>
@@ -69,23 +101,12 @@ export function DocsHome() {
             />
             <div className="flex items-center justify-between gap-6">
               <a
-                className="docs-accent flex h-9 w-[120px] items-center justify-between rounded-full px-4 text-[14px] text-white"
+                className="docs-cta inline-flex h-12 items-center justify-center gap-3 rounded-full px-6 text-[14px] font-medium text-white"
                 href="mailto:support@cerebras.ai"
               >
                 <span>Contact Us</span>
-                <img src={embeddedAssets.arrowWhite} alt="" className="h-4 w-4" />
+                <ExternalLinkIcon />
               </a>
-              <button
-                type="button"
-                aria-label="Toggle color scheme"
-                className="docs-toggle h-5 w-5 cursor-pointer"
-                onClick={() => setManualOverride((current) => !(current ?? systemPrefersDark))}
-              >
-                <img
-                  src={darkMode ? embeddedAssets.iconSun : embeddedAssets.iconMoon}
-                  alt=""
-                />
-              </button>
             </div>
           </header>
 
@@ -105,7 +126,7 @@ export function DocsHome() {
                 <a
                   key={card.title}
                   href={card.href}
-                  className="docs-card w-[328px] rounded-3xl p-8 shadow-md sm:w-[296px] md:w-[352px] lg:w-[376px] xl:w-[560px]"
+                  className="docs-card w-[328px] rounded-3xl p-8 sm:w-[296px] md:w-[352px] lg:w-[376px] xl:w-[560px]"
                 >
                   <div className="mb-4 flex items-center justify-start">
                     <img src={card.icon} alt={card.iconAlt} className="mr-3 h-6 w-6" />

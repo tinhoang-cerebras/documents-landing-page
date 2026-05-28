@@ -7,11 +7,11 @@
 }
 
 :root {
-  --docs-bg-light: #d3d3d5;
+  --docs-bg-light: #ffffff;
   --docs-bg-dark: #313036;
   --docs-card-light: #f9f9f9;
   --docs-card-dark: #1b1a1e;
-  --docs-accent: #c0441f;
+  --docs-accent: #f38058;
   --docs-copy-light: #3b1b0c;
   --docs-muted-light: #424049;
   --docs-muted-dark: #717079;
@@ -99,8 +99,9 @@ button {
   color: var(--docs-card-copy-dark);
 }
 
-.docs-accent {
-  background-color: var(--docs-accent);
+.docs-cta {
+  background-color: #1f1f25;
+  color: #fff;
 }
 
 .docs-toggle {
