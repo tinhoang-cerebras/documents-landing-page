@@ -59,14 +59,10 @@ button {
 
 .docs-shell {
   background-color: var(--docs-bg-light);
-  background-image: url("/background-light.svg");
-  background-position: center;
-  background-size: cover;
 }
 
 .dark .docs-shell {
   background-color: var(--docs-bg-dark);
-  background-image: url("/background-dark.svg");
 }
 
 .docs-copy {
@@ -113,4 +109,3 @@ button {
   background: transparent;
   padding: 0;
 }
-
