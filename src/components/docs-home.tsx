@@ -50,6 +50,35 @@ function ExternalLinkIcon() {
   );
 }
 
+function SdkIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="h-6 w-6"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        x="3.75"
+        y="3.75"
+        width="16.5"
+        height="16.5"
+        rx="4.25"
+        stroke="#F38058"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M9 9H9.01M12 9H12.01M15 9H15.01M9 12H9.01M12 12H12.01M15 12H15.01M9 15H9.01M12 15H12.01M15 15H15.01"
+        stroke="#F38058"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 const cards = [
   {
     href: "https://training-docs.cerebras.ai",
@@ -66,6 +95,13 @@ const cards = [
     title: "Inference",
     description:
       "Build LLM applications with the world's fastest inference solution using the Cerebras Inference SDK.",
+  },
+  {
+    href: "https://sdk.cerebras.ai",
+    iconAlt: "SDK icon",
+    title: "SDK",
+    description:
+      "Develop custom kernels and HPC applications for the world's largest chip using our low-level programming tools.",
   },
 ] as const;
 
@@ -129,7 +165,13 @@ export function DocsHome() {
                   className="docs-card w-[328px] rounded-3xl p-8 sm:w-[296px] md:w-[352px] lg:w-[376px] xl:w-[560px]"
                 >
                   <div className="mb-4 flex items-center justify-start">
-                    <img src={card.icon} alt={card.iconAlt} className="mr-3 h-6 w-6" />
+                    {"icon" in card ? (
+                      <img src={card.icon} alt={card.iconAlt} className="mr-3 h-6 w-6" />
+                    ) : (
+                      <div className="mr-3">
+                        <SdkIcon />
+                      </div>
+                    )}
                     <span className="text-xl font-bold lg:text-2xl xl:text-2xl">
                       {card.title}
                     </span>
