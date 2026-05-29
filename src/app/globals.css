@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -7,17 +8,19 @@
 }
 
 :root {
-  --docs-bg-light: #ffffff;
-  --docs-bg-dark: #313036;
-  --docs-card-light: #f9f9f9;
-  --docs-card-dark: #1b1a1e;
+  --docs-bg-light: #fefcfc;
+  --docs-bg-dark: #171419;
+  --docs-card-light: #ede8e5;
+  --docs-card-dark: #262128;
   --docs-accent: #f38058;
-  --docs-copy-light: #3b1b0c;
-  --docs-muted-light: #424049;
-  --docs-muted-dark: #717079;
-  --docs-card-copy-dark: #8a8890;
-  --docs-border-light: #d3d3d5;
-  --docs-border-dark: #313036;
+  --docs-copy-light: #000000;
+  --docs-copy-dark: #fbf5f3;
+  --docs-muted-light: #7a7371;
+  --docs-muted-dark: #9a9198;
+  --docs-card-copy-light: #161214;
+  --docs-card-copy-dark: #d8d0d6;
+  --docs-cta-light: #a75c39;
+  --docs-cta-dark: #8d4a2d;
 }
 
 * {
@@ -31,21 +34,11 @@ body {
 
 body {
   margin: 0;
-  font-family:
-    "Satoshi",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Fira Sans",
-    "Droid Sans",
-    "Helvetica Neue",
-    sans-serif;
+  font-family: "Manrope", "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--docs-bg-light);
+  color: var(--docs-copy-light);
 }
 
 a {
@@ -61,52 +54,54 @@ button {
   background-color: var(--docs-bg-light);
 }
 
-.dark .docs-shell {
-  background-color: var(--docs-bg-dark);
-}
-
 .docs-copy {
   color: var(--docs-copy-light);
 }
 
-.dark .docs-copy {
-  color: white;
-}
-
 .docs-card {
-  border: 1px solid var(--docs-border-light);
   background-color: var(--docs-card-light);
-}
-
-.dark .docs-card {
-  border-color: var(--docs-border-dark);
-  background-color: var(--docs-card-dark);
 }
 
 .docs-muted {
   color: var(--docs-muted-light);
 }
 
-.dark .docs-muted {
-  color: var(--docs-muted-dark);
-}
-
 .docs-card-copy {
-  color: var(--docs-muted-light);
-}
-
-.dark .docs-card-copy {
-  color: var(--docs-card-copy-dark);
+  color: var(--docs-card-copy-light);
 }
 
 .docs-cta {
-  background-color: #1f1f25;
+  background-color: var(--docs-cta-light);
   color: #fff;
 }
 
-.docs-toggle {
-  appearance: none;
-  border: 0;
-  background: transparent;
-  padding: 0;
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--docs-bg-dark);
+    color: var(--docs-copy-dark);
+  }
+
+  .docs-shell {
+    background-color: var(--docs-bg-dark);
+  }
+
+  .docs-copy {
+    color: var(--docs-copy-dark);
+  }
+
+  .docs-card {
+    background-color: var(--docs-card-dark);
+  }
+
+  .docs-muted {
+    color: var(--docs-muted-dark);
+  }
+
+  .docs-card-copy {
+    color: var(--docs-card-copy-dark);
+  }
+
+  .docs-cta {
+    background-color: var(--docs-cta-dark);
+  }
 }

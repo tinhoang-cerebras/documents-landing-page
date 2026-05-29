@@ -1,14 +1,21 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
-const siteTitle = "Cerebras Training and Inference Docs";
-const siteDescription = "Cerebras Training and Inference Docs";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://docs.cerebras.ai";
+const siteTitle = "Cerebras Developer Documentation";
+const siteDescription =
+  "Find Cerebras developer documentation for training, inference, and SDK workflows.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: siteTitle,
   description: siteDescription,
   applicationName: siteTitle,
   referrer: "origin-when-cross-origin",
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export const viewport: Viewport = {
@@ -27,14 +34,8 @@ export default function RootLayout({
       <head>
         <meta name="google" content="notranslate" />
         <meta name="edge" content="notranslate" />
-        <link rel="preconnect" href="https://api.fontshare.com" />
-        <link
-          rel="stylesheet"
-          href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap"
-        />
       </head>
       <body>{children}</body>
     </html>
   );
 }
-
