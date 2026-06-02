@@ -104,14 +104,16 @@ export function DocsHome() {
         />
 
         <header className="relative z-20 flex items-center justify-between bg-transparent px-4 pt-5 pb-3 md:px-8 xl:px-[103px]">
-          <picture>
-            <source media="(prefers-color-scheme: dark)" srcSet={embeddedAssets.logoLight} />
-            <img
-              src={embeddedAssets.logoDark}
-              alt="Cerebras"
-              className="h-auto w-[94px] md:w-[104px] xl:w-[116px]"
-            />
-          </picture>
+          <a href="https://cerebras.ai" aria-label="Cerebras home">
+            <picture>
+              <source media="(prefers-color-scheme: dark)" srcSet={embeddedAssets.logoLight} />
+              <img
+                src={embeddedAssets.logoDark}
+                alt="Cerebras"
+                className="h-auto w-[94px] md:w-[104px] xl:w-[116px]"
+              />
+            </picture>
+          </a>
           <div className="flex items-center gap-4">
             <a
               className="docs-cta inline-flex h-10 items-center justify-center gap-2 rounded-full px-4 text-[12px] font-medium md:h-[35px] md:px-3.5"
@@ -143,7 +145,7 @@ export function DocsHome() {
               <a
                 key={card.title}
                 href={card.href}
-                className="docs-card flex min-h-[260px] flex-col rounded-[5px] px-5 py-5 md:min-h-[300px] md:px-7 md:py-7 xl:min-h-[333px]"
+                className="docs-card flex min-h-[280px] flex-col rounded-[5px] px-5 py-5 md:min-h-[280px] md:px-7 md:py-7 xl:min-h-[280px]"
               >
                 <div className="max-w-[400px]">
                   <h2 className="text-[22px] leading-[1.1] font-medium md:text-[20px]">
