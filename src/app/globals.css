@@ -38,6 +38,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--docs-bg-light);
+  background-image: radial-gradient(circle at 50% 8%, #F05A2815 0, transparent 32%);
   color: var(--docs-copy-light);
 }
 
@@ -52,6 +53,7 @@ button {
 
 .docs-shell {
   background-color: var(--docs-bg-light);
+  background-image: radial-gradient(circle at 50% 8%, #F05A2815 0, transparent 32%);
 }
 
 .docs-copy {
@@ -78,11 +80,13 @@ button {
 @media (prefers-color-scheme: dark) {
   body {
     background-color: var(--docs-bg-dark);
+    background-image: linear-gradient(180deg, #21191d 0%, #1b1519 34%, #171419 100%);
     color: var(--docs-copy-dark);
   }
 
   .docs-shell {
     background-color: var(--docs-bg-dark);
+    background-image: linear-gradient(180deg, #21191d 0%, #1b1519 34%, #171419 100%);
   }
 
   .docs-copy {
