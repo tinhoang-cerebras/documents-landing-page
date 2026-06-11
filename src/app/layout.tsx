@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://docs.cerebras.ai";
@@ -34,6 +35,11 @@ export default function RootLayout({
       <head>
         <meta name="google" content="notranslate" />
         <meta name="edge" content="notranslate" />
+        <Script
+          id="cookieyes"
+          src="https://cdn-cookieyes.com/client_data/6f53b3980ca6754b7601b739/script.js"
+          strategy="afterInteractive"
+        />
       </head>
       <body>{children}</body>
     </html>
